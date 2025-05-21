@@ -1,0 +1,1001 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 16px;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 34px;
+}
+.main-panel-wrap {
+    overflow: hidden;
+    position: relative;
+    width: 956px;
+}
+.main-panel {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-right: 16px;
+}
+.main-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* pc id 셀렉박스 커스텀 */
+.id-selector .selector-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 306px;
+    height: 72px;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 32px;
+    transition: all .3s;
+}
+.selector-btn img {
+    width: 32px;
+    height: 32px;
+}
+.id-selector .selector-btn.hover {
+    background-color: var(--Primary-Fill-neutral-dark);
+}
+.id-selector-option {
+    position: absolute;
+    width: 304px;
+    max-height: 0;
+    padding: 0;
+    background-color: #fff;
+    border-radius: 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+    z-index: 99;
+}
+.custom-select.open .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    max-height: 1000px;
+    padding: 24px 0;
+}
+.id-selector-option li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: block;
+    padding: 15px 32px;
+    font-size: 16px;
+    color: var(--Neutral-Text-neutral);
+    transition: all .3s;
+    cursor: pointer;
+}
+.id-selector-option li:hover,
+.custom-option.selected {
+    color: var(--Primary-Fill-default);
+}
+.custom-option.selected::after,
+.id-selector-option li:hover:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 32px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../assets/images/ic_check.svg);
+}
+/* 상태 재확인 버튼 */
+.refresh-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 121px;
+    height: 48px;
+    font-size: 16px;
+    color: var(--Neutral-Text-neutral);
+    margin-right: 16px;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 20px;
+}
+.refresh-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+}
+
+/* body */
+.main-panel-body {
+    display: flex;
+}
+.cloud_vod video {
+    width: 580px;
+    margin-top: 40px;
+}
+.cloud-pc-title-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-top: 57px;
+    height: 217px;
+}
+.cloud-pc-title {
+    font-size: 36px;
+    color: var(--Neutral-Text-neutral);
+    font-weight: normal;
+    font-weight: 600;
+}
+.cloud-pc-title span {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+.cloud-pc-title .gradient-text {
+    font-weight: 600;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.gradient-text-blue {
+    background-image: linear-gradient(to right, #0066FF, #599CFF);
+}
+.gradient-text-red {
+    background-image: linear-gradient(to right, #FF4242, #FF8B8B);
+}
+.connection-message {
+    margin-top: 12px;
+    color: var(--Neutral-Text-neutral);
+    font-size: 18px;
+    line-height: 140%;
+}
+
+/*  progress-bar  */
+.progress-container {
+    width: 320px;
+    max-width: 500px;
+    margin-top: 32px;
+}
+.progress-bar {
+    height: 24px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right,
+            #5BB0FF 0%,
+            #0084FF 100%);
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 10px;
+    position: relative;
+}
+.profile-info {
+    margin-top: 43px;
+}
+.profile-info .info-row {
+    margin-bottom: 16px;
+}
+.profile-info .info-row:last-child {
+    margin-bottom: 0;
+}
+.profile-info .info-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--Neutral-Text-alternative);
+    line-height: 150%;
+}
+.profile-info .info-value {
+    display: block;
+    margin-top: 4px;
+    font-size: 18px;
+    color: var(--Neutral-Text-neutral);
+    line-height: 140%;
+}
+
+/* buttons-container */
+.buttons-container {
+    display: flex;
+    align-items: center;
+    /* gap: 12px; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 15px 24px;
+}
+.buttons-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin-right: 12px;
+    border-radius: 80px;
+    transition: all .3s;
+}
+
+.buttons-container button:last-child {
+    margin-right: 0;
+}
+
+.buttons-container button img {
+    width: 28px;
+    height: 28px;
+}
+
+.buttons-container button span {
+    display: none;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.buttons-container button.active {
+    width: 224px;
+}
+
+.buttons-container button.active span {
+    margin-left: 12px;
+    display: block;
+}
+.reboot-btn {
+    background-color: #E1E7F4;
+}
+.connect-btn {
+    background-color: var(--Primary-Fill-default);
+    color: #fff;
+}
+.connect-btn .connect-btn-disabled-img {
+    display: none;
+}
+.connect-btn:disabled .connect-btn-disabled-img {
+    display: block;
+}
+.connect-btn:disabled .connect-btn-img {
+    display: none;
+}
+/* sidebar */
+.sidebar {
+    width: 428px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 16px; */
+}
+
+.sidebar-panel {
+    padding: 20px 24px;
+    box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.025);
+    background-color: #fff;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.last-sidebar-panel {
+    margin-bottom: 0;
+}
+
+/* user-info */
+.user-info {
+    display: flex;
+    /* gap: 12px; */
+    align-items: center;
+    padding: 14px 12px 14px 0;
+    border-bottom: 1px solid var(--Neutral-Border-Neutral);
+}
+
+.user-info .user-avatar img {
+    width: 52px;
+    height: 52px;
+    margin-right: 12px;
+}
+
+.user-details .user-name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.user-details .user-name span {
+    margin-left: 8px;
+    padding: 4px 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1A75FF;
+    background-color: rgba(26, 117, 255, 0.05);
+    border-radius: 4px;
+}
+
+.user-details .user-role {
+    margin-top: 4px;
+    color: var(--Neutral-Text-neutral);
+    font-size: 14px;
+}
+
+/* stats */
+.stats {
+    display: flex;
+    /* gap: 16px; */
+    padding: 24px 0 14px;
+}
+
+.stat-item {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 16px;
+    padding: 5px 0;
+    color: var(--Neutral-Text-neutral);
+}
+
+.stat-item:first-child {
+    margin-left: 0;
+    padding-right: 16px;
+    border-right: 1px solid var(--Neutral-Border-Neutral);
+}
+
+.stat-label {
+    font-size: 16px;
+}
+
+.stat-value {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* 공지사항 */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.panel-header h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--Neutral-Text-defalut);
+}
+
+.panel-header .view-all {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--Neutral-Text-neutral);
+}
+
+.panel-header .view-all img {
+    width: 20px;
+    height: 20px;
+}
+
+.notice-list li:nth-child(n+5) {
+    display: none;
+}
+
+.notice-item {
+    position: relative;
+    padding: 5px 0;
+    font-size: 17px;
+}
+
+.notice-item a {
+    display: inline-block;
+    width: calc(100% - 10px);
+    color: var(--Neutral-Text-neutral);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 공지 사항 툴팁 */
+.hover-text {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 150%;
+    background-color: var(--Neutral-Text-neutral);
+    border-radius: 4px;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+}
+
+/* 선택 사항: 툴팁 화살표 */
+.hover-text::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;             
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--Neutral-Text-neutral) transparent transparent transparent;
+    transform: rotate(-180deg);
+}
+
+
+.RECENT-NOTICE-EMPTY {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 132px;
+    font-size: 14px;
+}
+/* .shortcut-apps */
+.shortcut-apps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--Neutral-Border-Neutral);
+
+}
+
+.app-shortcut {
+    width: 95px;
+    padding: 8px 0;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.app-shortcut:hover {
+    background-color: rgba(49, 59, 73, 0.05);
+    border-radius: 20px;
+}
+
+.app-shortcut:hover .app-icon {
+    background-color: transparent;
+}
+
+.app-shortcut:hover .app-icon span {
+    opacity: 0;
+}
+.app-icon {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto;
+    background-color: rgba(49, 59, 73, 0.05);
+    border-radius: 12px;
+}
+.app-icon img {
+    margin-top: -10px;
+}
+.app-shortcut:last-child img {
+    margin-top: 0;
+}
+
+.app-icon span {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    color: var(--Neutral-Text-neutral);
+    font-size: 8px;
+    line-height: 130%;
+    background-color: var(--Primary-Fill-neutral-dark);
+    transform: translateX(-50%);
+    transition: all .3s;
+}
+
+.app-name {
+    margin-top: 12px;
+    color: var(--Neutral-Text-defalut);
+    text-align: center;
+    font-size: 14px;
+}
+.app-name br {
+    display: none;
+}
+
+.support-info {
+    padding-top: 20px;
+}
+
+.support-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.support-row:last-child {
+    margin-bottom: 0;
+}
+
+.support-label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 8px;
+    color: var(--Neutral-Text-alternative);
+}
+
+.support-value {
+    color: var(--Neutral-Text-default);
+}
+
+.guide-btn {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px 6px 16px;
+    font-size: 16px;
+    color: var(--Neutral-Text-neutral);
+    background-color: var(--Primary-Fill-neutral);
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 1479px) {
+    .container {
+        display: block;
+        max-width: 1080px;
+    }
+
+    .main-panel-wrap {
+        position: relative;
+        max-width: 1000px;
+        width: 100%;
+        height: 667px;  
+    }
+    .main-panel {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 667px;
+        margin-right: 0;
+        /* background-image: url(../images/bg.svg);
+        background-repeat: no-repeat;
+        background-size: cover; */
+    }
+     .cloud-pc-title-wrap {
+        margin-top: 0px;
+    }
+    .profile-info {
+    margin-top: 30px;
+    }
+    .progress-container {
+        margin-top: 24px;
+    }
+   .profile-info .info-row {
+    margin-bottom: 12px;
+    }
+    .profile-info .info-value {
+        font-size: 16px;
+    }
+    .profile-info .info-value {
+        font-size: 16px;
+    }
+
+    .cloud_vod video {
+        margin: 10px 0 0 20px;
+    }   
+    
+    .svg-container, .overlaySvg {
+        width: 100%;
+        height: 667px; 
+    }   
+
+    .sidebar {
+        display: flex;
+        width: 100%;
+        margin-top: 16px;
+        flex-direction: initial;
+        justify-content: space-between;
+    }
+
+    .sidebar>div {
+        width: 49.3%;
+    }
+
+    .notice-list li:nth-child(n+4) {
+        display: none;
+    }
+
+    .shortcut-apps {
+        margin-top: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid var(--Neutral-Border-Neutral);
+    }
+
+    .sidebar-panel:last-child {
+        margin-bottom: 0;
+    }
+
+    .recent-notice-empty {
+        min-height: 75px;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+    .container {
+        display: block;
+        max-width: 1079px;
+        padding: 0 32px;
+    }
+    .main-panel-wrap {
+        position: relative;
+        max-width: calc(1079px - 64px);
+        width: 100%;
+        height: 697px;  
+    }
+    .main-panel {
+        width: 100%;
+        height: 697px; 
+        margin-right: 0;
+    }
+    .svg-container, .overlaySvg {
+        display: flex;
+        /* display: flex; */
+        width: 100%;
+        height: 697px; 
+    }
+    .svg-container svg, .overlaySvg svg {
+        height: 697px; 
+    }
+    .svg-container svg:nth-child(1), .overlaySvg svg:nth-child(1) {
+        max-width: 338px;
+        width: 100%;
+    }
+    .svg-container svg:nth-child(2) , .overlaySvg svg:nth-child(2) {
+        flex-grow: 1;
+        width: auto;
+        height: 697px !important; 
+    }
+    .svg-container svg:nth-child(3), .overlaySvg svg:nth-child(3) {
+        max-width: 344px;
+        width: 100%;
+    }
+    .cloud_vod {
+        display: flex;
+        align-items: center;
+    }
+    .cloud_vod video {
+        width: 480px;
+        margin-top: 40px;
+    }
+    .info-mo-layout {
+        position: absolute;
+        right: 10px;
+        width: 320px;
+    }
+    .cloud-pc-title-wrap {
+        margin-top: 24px;
+    }
+    .profile-info .info-row {
+        margin-bottom: 12px;
+    }
+    .profile-info .info-label {
+        font-size: 14px;
+    }
+    .profile-info .info-value {
+        font-size: 16px;
+    }
+    .progress-container {
+        width: 300px;
+    }
+    .buttons-container {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 20px 16px;
+    }
+    .buttons-container button.active {
+        width: 200px;
+    }
+    .app-shortcut {
+        width: 80px;
+        height: auto;
+        transition: all .3s;
+        cursor: pointer;
+    }
+    
+    .app-shortcut:hover {
+        background-color: none;
+        border-radius: 20px;
+    }
+    
+    .app-shortcut:hover .app-icon {
+        background-color: rgba(49, 59, 73, 0.05);
+    }
+    
+    .app-shortcut:hover .app-icon span {
+        opacity: 1;
+    }
+    .app-name br {
+        display: block;
+    }
+
+}
+@media screen and (max-width: 767px) {
+    .container {
+        display: block;
+        max-width: 767px;
+        padding: 0 20px;
+    }
+    .main-panel-wrap {
+        position: relative;
+        max-width: calc(1079px - 64px);
+        width: 100%;
+        height: 637px;  
+    }
+    .main-panel {
+        width: 100%;
+        height: 100%; 
+        margin-right: 0;
+    }
+    .svg-container, .overlaySvg {
+        display: flex;
+        width: 100%;
+        height: 637px; 
+        align-items: end;
+    }
+    .svg-container svg {
+        height: 637px; 
+    }
+    .svg-container svg:nth-child(1), .overlaySvg svg:nth-child(1) {
+        max-width: 62px;
+        width: 100%;
+        height: 578px;
+    }
+    .svg-container svg:nth-child(2), .overlaySvg svg:nth-child(2) {
+        flex-grow: 1;
+        width: auto;
+        height: 577px !important;
+    }
+    .svg-container svg:nth-child(3), .overlaySvg svg:nth-child(3) {
+        max-width: 116px;
+        width: 100%;
+    }
+
+    .main-panel-body {
+        display: block;
+    }
+    .custom-select, .id-selector-option {
+        width: calc(100% - 80px)
+    }
+    .id-selector .selector-btn {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        padding: 16px 12px;
+        font-size: 20px;
+        font-weight: 500;
+        transition: all .3s;
+    }
+
+    .id-selector .selector-btn img {
+        width: 20px;
+        height: 20px;
+        transform: rotate(180deg);
+    }
+
+    .refresh-btn {
+        width: 24px;
+        height: 24px;
+        margin-right: 18px;
+        background-color: transparent;
+    }
+    .refresh-btn img {
+        width: 24px;
+        height: 24px;
+    }
+    .refresh-btn span {
+        display: none;
+    }
+
+    .cloud_vod {
+        display: flex;
+        justify-content: center;
+        /* width: 100%; */
+        margin-top: 205px;
+    }
+
+    .cloud_vod video {
+        width: 328px;
+        margin-top: 0;
+    }
+
+    .cloud-pc-title-wrap {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        margin-top: 0;
+        height: 217px;
+        align-content: center;
+    }
+    .cloud-pc-title {
+        width: 100%;
+        font-size: 28px;
+        text-align: center;
+        line-height: 1.4em;
+    }
+    .connection-message {
+        width: 100%;
+        margin: 15px 0;
+        font-size: 14px;
+        text-align: center;
+        line-height: 150%;
+    }
+    .progress-container {
+        width: 320px;
+        max-width: 80%;
+        margin-top: 32px;
+        margin: 0 auto;
+    }
+    .progress-bar {
+        height: 20px;
+    }
+    .profile-info {display: none;}
+    .buttons-container {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: inherit;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 24px;
+    }
+    .buttons-container button.active {
+        width: 160px;
+    }
+    .buttons-container button {
+        width: 58px;
+        height: 58px;
+    }
+    .buttons-container button.active span {
+        font-size: 18px;
+    }
+    .buttons-container button img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .sidebar {
+        display: block;
+    }
+    .sidebar>div {
+        width: 100%;
+    }
+    .notice-item {
+        font-size: 14px;
+    }
+    .app-shortcut {
+        width: 70px;
+    }
+    .support-label, .support-value {
+        font-size: 14px;
+    }
+    .guide-btn {
+        font-size: 14px;
+    }
+    .sidebar-panel {
+        margin-bottom: 12px;
+    }
+    .sidebar-panel:last-child {
+        margin-bottom: 12px;
+    }
+    .shortcut-apps {
+        display: flex;
+        justify-content: space-around;
+    }
+    .app-name br {
+        display: block;
+    }
+    .cloud_vod video {
+        margin: 0 0 0 0;
+    }
+}
+
+
+/* s: 추가 */
+.main-panel-wrap {
+    position: relative;    
+    height: 767px; 
+    background-color: rgba(225, 231, 244, 1);
+    border-radius: 32px;
+}
+.main-panel {
+    height: 100%; 
+}
+.main-panel-body {
+    height: 100%;    
+}
+.custom-select {
+    position: relative;
+    background-color: #F4F6F8;
+    border-bottom-right-radius: 32px;    
+}
+.custom-select .id-selector {
+  position: relative;
+  z-index: 10;
+}
+.custom-select::before,
+.custom-select::after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    width: 38px;
+    height: 38px;    
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-image: url("../images/edge.svg");
+    transform: rotate(90deg);    
+}
+.custom-select::before {    
+    left: -2px;
+    bottom: -36px;    
+}
+.custom-select::after {    
+    top: -2px;
+    right: -36px;     
+}
+.buttons-container {    
+    background-color: #F4F6F8;
+    border-top-left-radius: 36px;    
+}
+.buttons-container::before,
+.buttons-container::after {
+    z-index: 10;
+    content: "";
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-image: url("../images/edge.svg");
+    transform: rotate(-90deg);    
+}
+.buttons-container::before {    
+    left: -36px;
+    bottom: -2px;       
+}
+.buttons-container::after {    
+    top: -36px;
+    right: -2px;       
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {    
+    .main-panel-wrap {
+        height: 697px;  
+    }
+}
+
+@media screen and (max-width: 767px) {      
+    .main-panel-wrap {
+        height: 637px; 
+    } 
+    .custom-select::after {            
+        right: -35px;     
+    }
+    .buttons-container {    
+        background-color: transparent;
+        border-top-left-radius: 0;    
+    }
+    .buttons-container::before,
+    .buttons-container::after {
+        content: none;   
+    }  
+          
+}
+/* e: 추가 */
